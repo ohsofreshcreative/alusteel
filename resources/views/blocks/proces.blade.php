@@ -1,5 +1,9 @@
 <!--- proces --->
 
+@if (!empty($block->preview))
+@include('blocks.previews.preview-proces')
+@else
+
 <section
 	data-gsap-anim="section"
 	@if(!empty($section_id)) id="{{ $section_id }}" @endif
@@ -8,8 +12,6 @@
 	$section_class => filled($section_class),
 	$background => filled($background) && $background !== 'none',
 	])>
-
-	<img class="absolute mix-blend-overlay opacity-10 top-1/2 -translate-y-7/12 right-0 translate-x-1/3 z-1 pointer-events-none w-[1004px]" src="{{ get_template_directory_uri() }}/resources/images/signet.svg" alt="" />
 
 	<div class="__wrapper c-main">
 		@if (!empty($g_proces['header']) || !empty($g_proces['txt']))
@@ -64,3 +66,5 @@
 	</div>
 
 </section>
+
+@endif

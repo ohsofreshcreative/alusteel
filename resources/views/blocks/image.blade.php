@@ -1,3 +1,7 @@
+@if (!empty($block->preview))
+@include('blocks.previews.preview-image')
+@else
+
 @php
 
 $hasImage1 = !empty($g_image['image']);
@@ -40,3 +44,5 @@ $isPost = is_singular('post');
 	</div>
 
 </section>
+
+@endif

@@ -1519,6 +1519,11 @@
           "color": "rgb(var(--p-900))"
         },
         {
+          "name": "Primary (Dark)",
+          "slug": "primary-dark",
+          "color": "rgb(var(--p-dark))"
+        },
+        {
           "name": "Primary (Bg)",
           "slug": "primary-bg",
           "color": "rgb(var(--p-bg))"
@@ -1589,11 +1594,6 @@
           "color": "rgb(var(--t-600))"
         },
         {
-          "name": "Gray",
-          "slug": "gray",
-          "color": "var(--gray)"
-        },
-        {
           "name": "Action",
           "slug": "action",
           "color": "var(--action)"
@@ -1604,9 +1604,9 @@
           "color": "var(--bg)"
         },
         {
-          "name": "Background (Light)",
-          "slug": "background-light",
-          "color": "var(--bg-light)"
+          "name": "Background (Brand)",
+          "slug": "background-brand",
+          "color": "var(--bg-brand)"
         },
         {
           "name": "Background (Navy)",

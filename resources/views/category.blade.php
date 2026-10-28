@@ -42,8 +42,6 @@ $unique_id = 'clip_'.uniqid();
 	@endif
 	<div class="absolute inset-0 bg-gradient @if(!empty($category_image['url'])) opacity-80 @endif"></div>
 
-	<img class="absolute top-0 left -translate-x-1/3 w-auto opacity-40 mix-blend-overlay h-[704px] pointer-events-none" src="{{ get_template_directory_uri() }}/resources/images/signet.svg" alt="">
-
 	<div data-gsap-element="bread" class="__breadcrumb mb-4 relative z-10">
 		@if (function_exists('yoast_breadcrumb'))
 		{!! yoast_breadcrumb('<p id="breadcrumbs">','</p>') !!}
