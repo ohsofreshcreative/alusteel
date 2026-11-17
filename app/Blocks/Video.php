@@ -16,6 +16,7 @@ class Video extends Block
 	public $icon = 'video-alt3';
 	public $keywords = ['video', 'wideo'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,

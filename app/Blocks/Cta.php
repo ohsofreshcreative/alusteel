@@ -16,6 +16,7 @@ class Cta extends Block
 	public $icon = 'button';
 	public $keywords = ['cta'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,

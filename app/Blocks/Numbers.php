@@ -16,6 +16,7 @@ class Numbers extends Block
 	public $icon = 'yes-alt';
 	public $keywords = ['numbers', 'kafelki'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,
@@ -60,6 +61,12 @@ class Numbers extends Block
 			->addText('section_class', [
 				'label' => 'Dodatkowe klasy CSS',
 			])
+			->addTrueFalse('lines', [
+				'label' => 'Wariant z przerywanymi separatorami',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
 			->addTrueFalse('wide', [
 				'label' => 'Szeroka kolumna',
 				'ui' => 1,
@@ -92,6 +99,7 @@ class Numbers extends Block
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),
 
+			'lines' => (bool) get_field('lines'),
 			'wide' => (bool) get_field('wide'),
 			'nomt' => (bool) get_field('nomt'),
 
@@ -99,6 +107,7 @@ class Numbers extends Block
 		];
 
 		$fields['sectionClass'] = SectionClasses::fromMap($fields, [
+			'lines' => 'numbers-lines',
 			'wide' => 'wide',
 			'nomt' => '!mt-0',
 		]);

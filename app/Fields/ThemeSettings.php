@@ -28,8 +28,10 @@ class ThemeSettings extends Field
 			])
 
 			->addTab('Dane kontaktowe (Stopka)', ['placement' => 'top'])
-			->addGroup('footer_contact', ['label' => 'Dane w pierwszej kolumnie stopki'])
-
+			->addGroup('footer_contact', ['label' => 'Dane w stopce'])
+			->addText('header', [
+				'label' => 'Nagłówek pod logo',
+			])
 			->addWysiwyg('address', [
 				'label' => 'Adres / Dane firmy',
 				'tabs' => 'all',
@@ -42,6 +44,13 @@ class ThemeSettings extends Field
 			->addText('email', [
 				'label' => 'Adres E-mail',
 			])
+			->endGroup()
+
+			->addTab('Social media', ['placement' => 'top'])
+			->addGroup('socials', ['label' => ''])
+			->addUrl('facebook', ['label' => 'Facebook'])
+			->addUrl('instagram', ['label' => 'Instagram'])
+			->addUrl('youtube', ['label' => 'YouTube'])
 			->endGroup();
 
 		return [$theme];

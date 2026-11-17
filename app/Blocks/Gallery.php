@@ -16,6 +16,7 @@ class Gallery extends Block
 	public $icon = 'format-gallery';
 	public $keywords = ['gallery', 'kafelki'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,
@@ -38,11 +39,32 @@ class Gallery extends Block
 
 			->addGallery('gallery', [
 				'label' => 'Galeria',
+				'instructions' => 'Przy wypełnionych kategoriach to zdjęcia pod chipem „Wszystkie”.',
 				'preview_size' => 'medium',
 				'library' => 'all',
 				'min' => 1,
-				'max' => 10,
+				'max' => 50,
 			])
+
+			->addText('all_label', [
+				'label' => 'Etykieta chipa „wszystkie”',
+				'default_value' => 'Wszystkie',
+			])
+			->addRepeater('r_gallery', [
+				'label' => 'Kategorie (opcjonalnie — włączają chipy i filtrowanie)',
+				'layout' => 'table', // 'row', 'block', albo 'table'
+				'button_label' => 'Dodaj kategorię',
+			])
+			->addText('name', [
+				'label' => 'Nazwa',
+			])
+			->addGallery('images', [
+				'label' => 'Zdjęcia',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			])
+			->endRepeater()
 
 			->endGroup()
 
@@ -100,6 +122,7 @@ class Gallery extends Block
 	{
 		$fields = [
 			'g_gallery' => get_field('g_gallery'),
+			'r_gallery' => get_field('g_gallery')['r_gallery'] ?? [],
 
 			'section_id' => get_field('section_id'),
 			'section_class' => get_field('section_class'),

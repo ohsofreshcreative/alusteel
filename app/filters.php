@@ -80,3 +80,16 @@ add_filter('gettext', function ($translated, $text, $domain) {
 add_filter('acf/blocks/default_expanded_editor_button_text', function () {
     return 'Edytuj sekcję';
 });
+
+/*--- Pola bloków ACF tylko w modalu „Edytuj sekcję”, bez formularza w sidebarze ---*/
+// ACF Composer nie przekazuje hideFieldsInSidebar, więc ustawiamy je po rejestracji ACF (priorytet 99).
+$hideAcfBlockFieldsInSidebar = function ($settings) {
+    if (! empty($settings['acf_block_version']) && $settings['acf_block_version'] >= 3) {
+        $settings['hide_fields_in_sidebar'] = true;
+    }
+
+    return $settings;
+};
+
+add_filter('block_type_metadata_settings', $hideAcfBlockFieldsInSidebar, 100);
+add_filter('acf/register_block_type_args', $hideAcfBlockFieldsInSidebar);

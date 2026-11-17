@@ -1,2 +1,12 @@
 .b-map {
 }
+
+/* iframe mapy (embed z pola treści) na całą szerokość w proporcji z makiety (1632×741), w odcieniach szarości */
+.b-map.map-container .__txt iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1632 / 741;
+  border: 0;
+  filter: grayscale(1);
+}

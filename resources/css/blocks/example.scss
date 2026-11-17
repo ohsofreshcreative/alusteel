@@ -1,0 +1,43 @@
+.b-example {
+}
+
+/* Lista punktów z WYSIWYG: marginesy li/p zerowane, odstępy daje grid */
+.b-example .__list p {
+  margin: 0;
+}
+
+/* Lista punktów z WYSIWYG: dwie kolumny, kropki w kolorze primary-600 */
+.b-example .__list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  row-gap: 4px;
+}
+
+/* Od lg: punkty układają się w kolumny po 2 wiersze, kolumny mają szerokość treści (bez rozciągania na całą szerokość) */
+@media (min-width: 1024px) {
+  .b-example .__list ul {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    grid-auto-columns: fit-content(50%);
+    column-gap: 48px;
+  }
+}
+
+.b-example .__list li {
+  position: relative;
+  margin: 0;
+  padding-left: 17px;
+}
+
+.b-example .__list li::before {
+  content: '';
+  position: absolute;
+  top: 0.6em;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-primary-600);
+}

@@ -196,7 +196,7 @@ add_action('widgets_init', function () {
 	$defaultConfig = [
 		'before_widget' => '<section class="footer_widget widget %1$s %2$s">',
 		'after_widget' => '</section>',
-		'before_title' => '<p class="font-header text-h6 widget-title primary !mb-4 flex">',
+		'before_title' => '<p class="widget-title text-h5 uppercase text-white !mb-2">',
 		'after_title' => '</p>',
 	];
 

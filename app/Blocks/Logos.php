@@ -16,6 +16,7 @@ class Logos extends Block
     public $icon = 'images-alt';
     public $keywords = ['tresc', 'logotypy', 'partnerzy'];
     public $mode = 'edit';
+    public $blockVersion = 3;
     public $supports = [
         'align' => false,
         'mode' => true,

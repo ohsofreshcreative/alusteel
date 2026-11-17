@@ -16,6 +16,7 @@ class Wysiwyg extends Block
 	public $icon = 'format-aside';
 	public $keywords = ['tresc', 'edytor'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,

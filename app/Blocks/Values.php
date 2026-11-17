@@ -16,6 +16,7 @@ class Values extends Block
 	public $icon = 'image-flip-horizontal';
 	public $keywords = ['values', 'kafelki'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,
@@ -32,6 +33,7 @@ class Values extends Block
 			->addTab('Treści', ['placement' => 'top'])
 			->addGroup('g_values', ['label' => ''])
 
+			->addText('subtitle', ['label' => 'Nadtytuł'])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addWysiwyg('text', [
 				'label' => 'Treść',
@@ -80,6 +82,12 @@ class Values extends Block
 			])
 			->addTrueFalse('nolist', [
 				'label' => 'Brak punktatorów',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
+			->addTrueFalse('split', [
+				'label' => 'Treść obok nagłówka (wariant bez zdjęcia)',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
@@ -133,6 +141,7 @@ class Values extends Block
 			'nomt' => (bool) get_field('nomt'),
 			'gap' => (bool) get_field('gap'),
 			'nolist' => (bool) get_field('nolist'),
+			'split' => (bool) get_field('split'),
 
 			'background' => get_field('background') ?: 'none',
 		];
@@ -143,6 +152,7 @@ class Values extends Block
 			'nomt' => '!mt-0',
 			'gap' => 'wider-gap',
 			'nolist' => 'no-list',
+			'split' => 'values-split',
 		]);
 
 		return $fields;

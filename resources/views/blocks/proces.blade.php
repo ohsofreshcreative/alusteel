@@ -26,10 +26,10 @@
 		@endif
 
 		@if (!empty($r_proces))
-		<div class="swiper proces-swiper !overflow-visible relative mt-10">
+		<div class="swiper proces-swiper w-full !overflow-visible relative mt-10">
 			<div class="swiper-wrapper">
 				@foreach ($r_proces as $item)
-				<div data-gsap-element="stagger" class="__card swiper-slide relative flex flex-col bg-primary-50 radius p-6 overflow-hidden">
+				<div data-gsap-element="stagger" class="__card swiper-slide !w-4/5 sm:!w-9/20 lg:!w-6/25 !h-auto relative flex flex-col bg-primary-50 radius p-6 overflow-hidden">
 					<div class="relative z-10">
 						@if (!empty($item['number']))
 						<p class="text-h2 text-primary">{{ $item['number'] }}</p>

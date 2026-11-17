@@ -16,6 +16,7 @@ class Map extends Block
 	public $icon = 'location';
 	public $keywords = ['tresc', 'edytor'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,
@@ -33,6 +34,7 @@ class Map extends Block
 			/*--- GROUP ---*/
 			->addTab('Elementy', ['placement' => 'top'])
 			->addGroup('g_map', ['label' => ''])
+			->addText('subtitle', ['label' => 'Nadtytuł'])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addTextarea('map', [
 				'label' => 'Kod mapy',
@@ -65,6 +67,12 @@ class Map extends Block
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
 			])
+			->addTrueFalse('container', [
+				'label' => 'Szeroki kontener z nadtytułem (makieta Kontakt)',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
 			->addTrueFalse('nomt', [
 				'label' => 'Usunięcie marginesu górnego',
 				'ui' => 1,
@@ -92,6 +100,7 @@ class Map extends Block
 
 			'wide' => (bool) get_field('wide'),
 			'nomt' => (bool) get_field('nomt'),
+			'container' => (bool) get_field('container'),
 			'nolist' => (bool) get_field('nolist'),
 
 			'background' => get_field('background') ?: 'none',
@@ -101,6 +110,7 @@ class Map extends Block
 			'wide' => 'wide',
 			'nomt' => '!mt-0',
 			'nolist' => 'no-list',
+			'container' => 'map-container',
 		]);
 
 		return $fields;

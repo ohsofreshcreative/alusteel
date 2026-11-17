@@ -19,6 +19,7 @@ class Oreviews extends Options
 		$oreviews = new FieldsBuilder('oreviews');
 
 		$oreviews
+			->addText('subtitle', ['label' => 'Nadtytuł'])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addRepeater('r_reviews', [
 				'label'        => 'Opinie',
@@ -29,6 +30,9 @@ class Oreviews extends Options
 			])
 			->addText('header', [
 				'label' => 'Nagłówek',
+			])
+			->addText('subtitle', [
+				'label' => 'Podtytuł (np. produkt)',
 			])
 			->addTextarea('txt', [
 				'label'     => 'Treść opinii',
@@ -45,6 +49,10 @@ class Oreviews extends Options
 			])
 			->addText('position', [
 				'label' => 'Stanowisko',
+			])
+			->addLink('link', [
+				'label' => 'Link (np. „Zobacz pełną referencję”)',
+				'return_format' => 'array',
 			])
 			->endRepeater();
 

@@ -33,7 +33,7 @@
     "src": "editor.deps.json"
   },
   "resources/css/app.css": {
-    "file": "assets/app-sZ4HfrGk.css",
+    "file": "assets/app-0lsIS6e_.css",
     "name": "app",
     "names": [
       "app.css"
@@ -42,14 +42,12 @@
     "isEntry": true,
     "assets": [
       "assets/PolySans Bulky Wide-VzLwgn3K.ttf",
-      "assets/btn-arrow-DSZ4x1kn.svg",
-      "assets/bottom-arrow-BE5KB43S.svg",
-      "assets/pointer-5_58814e.svg",
-      "assets/cta-mask-DkOSFVpY.svg"
+      "assets/btn-arrow-BVcrn6_J.svg",
+      "assets/pointer-5_58814e.svg"
     ]
   },
   "resources/css/editor.css": {
-    "file": "assets/editor-q7gCkKK_.css",
+    "file": "assets/editor-Bmk7jDHV.css",
     "name": "editor",
     "names": [
       "editor.css"
@@ -58,34 +56,24 @@
     "isEntry": true,
     "assets": [
       "assets/PolySans Bulky Wide-VzLwgn3K.ttf",
-      "assets/btn-arrow-DSZ4x1kn.svg",
-      "assets/bottom-arrow-BE5KB43S.svg",
-      "assets/pointer-5_58814e.svg",
-      "assets/cta-mask-DkOSFVpY.svg"
+      "assets/btn-arrow-BVcrn6_J.svg",
+      "assets/pointer-5_58814e.svg"
     ]
   },
   "resources/fonts/PolySans Bulky Wide.ttf": {
     "file": "assets/PolySans Bulky Wide-VzLwgn3K.ttf",
     "src": "resources/fonts/PolySans Bulky Wide.ttf"
   },
-  "resources/images/bottom-arrow.svg": {
-    "file": "assets/bottom-arrow-BE5KB43S.svg",
-    "src": "resources/images/bottom-arrow.svg"
-  },
   "resources/images/btn-arrow.svg": {
-    "file": "assets/btn-arrow-DSZ4x1kn.svg",
+    "file": "assets/btn-arrow-BVcrn6_J.svg",
     "src": "resources/images/btn-arrow.svg"
-  },
-  "resources/images/cta-mask.svg": {
-    "file": "assets/cta-mask-DkOSFVpY.svg",
-    "src": "resources/images/cta-mask.svg"
   },
   "resources/images/pointer.svg": {
     "file": "assets/pointer-5_58814e.svg",
     "src": "resources/images/pointer.svg"
   },
   "resources/js/app.js": {
-    "file": "assets/app-Co7tsQ0p.js",
+    "file": "assets/app-B2u-rRoK.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -117,7 +105,7 @@
     ]
   },
   "resources/js/blocks/reviews.js": {
-    "file": "assets/reviews-CMAwlmRU.js",
+    "file": "assets/reviews-B-ta4WTv.js",
     "name": "reviews",
     "src": "resources/js/blocks/reviews.js",
     "isDynamicEntry": true,

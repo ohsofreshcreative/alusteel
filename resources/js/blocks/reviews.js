@@ -121,9 +121,30 @@ const initReviewsSwiper = (scope = document) => {
   });
 };
 
+/**
+ * Wariant ze zdjęciem i strzałkami (.reviews-photo): jedna szeroka karta + fragment kolejnej.
+ * @param {HTMLElement} scope - Element, w którym szukamy karuzeli.
+ */
+const initPhotoSwiper = (scope = document) => {
+  scope.querySelectorAll('.reviews-photo-swiper:not(.swiper-initialized)').forEach((swiperEl) => {
+    const slider = swiperEl.closest('.__slider');
+
+    new Swiper(swiperEl, {
+      modules: [Navigation],
+      slidesPerView: 1.05,
+      spaceBetween: 16,
+      navigation: { nextEl: slider?.querySelector('.__next'), prevEl: slider?.querySelector('.__prev') },
+      breakpoints: {
+        1024: { slidesPerView: 1.21, spaceBetween: 32 },
+      },
+    });
+  });
+};
+
 // Inicjalizacja na starcie
 initReviewsSwiper();
 initReviewPopup();
+initPhotoSwiper();
 
 // Wsparcie dla edytora ACF
 if (window.acf) {
@@ -132,6 +153,7 @@ if (window.acf) {
     if (node) {
       initReviewsSwiper(node);
       initReviewPopup(node);
+      initPhotoSwiper(node);
     }
   });
 }

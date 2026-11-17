@@ -16,6 +16,7 @@ class Content extends Block
 	public $icon = 'align-pull-left';
 	public $keywords = ['tresc', 'zdjecie'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 public $supports = [
     'align' => false,
     'mode' => true,
@@ -38,6 +39,7 @@ public $supports = [
 				'return_format' => 'array',
 				'preview_size' => 'thumbnail',
 			])
+			->addText('subtitle', ['label' => 'Nadtytuł (układ z listą cech)'])
 			->addText('header', ['label' => 'Nagłówek'])
 			->addWysiwyg('text', [
 				'label' => 'Treść',
@@ -53,6 +55,26 @@ public $supports = [
 				'label' => 'Przycisk #2',
 				'return_format' => 'array',
 			])
+			->addRepeater('r_content', [
+				'label' => 'Cechy (układ z listą cech)',
+				'layout' => 'table', // 'row', 'block', albo 'table'
+				'button_label' => 'Dodaj cechę',
+			])
+			->addImage('icon', [
+				'label' => 'Ikona',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+			])
+			->addText('header', [
+				'label' => 'Nagłówek',
+			])
+			->addWysiwyg('text', [
+				'label' => 'Treść',
+				'tabs' => 'all',
+				'toolbar' => 'full',
+				'media_upload' => true,
+			])
+			->endRepeater()
 			->endGroup()
 
 			/*--- USTAWIENIA BLOKU ---*/
@@ -72,6 +94,12 @@ public $supports = [
 			])
 			->addTrueFalse('nolist', [
 				'label' => 'Brak punktatorów',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
+			->addTrueFalse('features', [
+				'label' => 'Układ z listą cech (wpis oferty)',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
@@ -125,6 +153,7 @@ public $supports = [
 			'nomt' => (bool) get_field('nomt'),
 			'gap' => (bool) get_field('gap'),
 			'nolist' => (bool) get_field('nolist'),
+			'features' => (bool) get_field('features'),
 
 			'background' => get_field('background') ?: 'none',
 		];

@@ -27,12 +27,32 @@
 	@endif
 
 	@if (!empty($g_hero['video']) || !empty($g_hero['image']))
-	<div class="absolute inset-0 z-1 pointer-events-none" style="background: linear-gradient(90deg, #001D51 5.84%, rgba(0, 29, 81, 0.20) 100.47%);"></div>
+	<div @class(['__overlay absolute inset-0 z-1 pointer-events-none bg-linear-to-r to-transparent after:absolute after:inset-0',
+		'from-black after:bg-linear-to-t after:from-primary-dark after:to-transparent after:to-50%' => str_contains($section_class ?? '', 'hero-archive'),
+		'bg-black/20 from-primary-dark after:bg-linear-to-b after:from-transparent after:from-47% after:to-secondary-900' => !str_contains($section_class ?? '', 'hero-archive'),
+	])></div>
 	@endif
 
-	<div class=" __wrapper c-main relative z-10">
-		<div class="__content relative flex flex-col justify-center w-full md:w-10/12 lg:w-8/12 z-20 pt-48 pb-62">
-			<h1 data-gsap-element="header" class="text-h2 text-white  m-header">
+	<div class="__wrapper c-wide relative z-10">
+		<div @class(['__content relative flex flex-col justify-center w-full lg:w-216 z-20 pt-56 pb-62',
+			'!pt-26 !pb-6 text-center mx-auto' => str_contains($section_class ?? '', 'hero-about'),
+			'!pt-2 !pb-44' => str_contains($section_class ?? '', 'hero-archive'),
+		])>
+			@if (!empty($breadcrumbs))
+			<nav class="__bread flex flex-wrap items-center gap-2 mb-36 text-white" aria-label="Okruszki">
+				@foreach ($breadcrumbs as $crumb)
+				@if ($loop->last)
+				<span aria-current="page" class="text-primary-400">{{ $crumb['title'] }}</span>
+				@else
+				<a href="{{ $crumb['url'] }}" class="!text-white">{{ $crumb['title'] }}</a>
+				<svg xmlns="http://www.w3.org/2000/svg" width="5" height="8" viewBox="0 0 5 8" fill="none" aria-hidden="true">
+					<path d="M1 1L4 4L1 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" />
+				</svg>
+				@endif
+				@endforeach
+			</nav>
+			@endif
+			<h1 data-gsap-element="header" class="text-h1 uppercase text-white m-header">
 				{{ $g_hero['title'] }}
 			</h1>
 			@if (!empty($g_hero['text']))
@@ -46,7 +66,7 @@
 				<x-button
 					:href="$g_hero['button1']['url']"
 					variant="primary"
-					class=""
+					class="!rounded-none"
 					data-gsap-element="btn">
 					{{ $g_hero['button1']['title'] }}
 				</x-button>
@@ -55,8 +75,8 @@
 				@if (!empty($g_hero['button2']))
 				<x-button
 					:href="$g_hero['button2']['url']"
-					variant="outline"
-					class=""
+					variant="white"
+					class="!rounded-none"
 					data-gsap-element="btn">
 					{{ $g_hero['button2']['title'] }}
 				</x-button>

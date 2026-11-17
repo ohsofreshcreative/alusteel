@@ -3,7 +3,7 @@ use App\Walkers\DropdownWalker;
 use App\Walkers\MobileDropdownWalker;
 @endphp
 
-<header x-data="{ mobileOpen: false }" class="relative top-0 z-50 bg-transparent masthead fixed-top">
+<header x-data="{ mobileOpen: false }" class="l-header relative top-0 z-50 bg-black/30 masthead fixed-top">
 
 	<!-- Desktop Header -->
 	<div class="items-center justify-between hidden h-full py-4 px-12 mx-auto lg:flex border-b border-primary-light/20">
@@ -27,8 +27,8 @@ use App\Walkers\MobileDropdownWalker;
 			</nav>
 			@endif
 			<div class="">
-				<a href="#" class="block w-full btn btn-secondary">
-					Kup bilet
+				<a href="#" class="block w-full btn btn-primary">
+					Zapytaj o rozwiązanie
 				</a>
 			</div>
 		</div>
@@ -98,8 +98,8 @@ use App\Walkers\MobileDropdownWalker;
 			@endif
 
 			<div class="mt-8">
-				<a href="#" class="block w-full btn btn-secondary">
-					Kup bilet
+				<a href="#" class="block w-full btn btn-primary">
+					Zapytaj o rozwiązanie
 				</a>
 			</div>
 

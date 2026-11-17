@@ -1,43 +1,20 @@
 .b-accordion {
+	/* Ukryty radio sterujący panelem */
 	input.acc-check {
 		position: absolute !important;
 		opacity: 0 !important;
 		z-index: -1 !important;
 	}
 
-	.accordion-wrapper {}
-
-	.accordion-wrapper:last-child {
-		border-bottom: none;
-	}
-
-	.accordion {
-		width: 100%;
-		overflow: hidden;
-		margin-bottom: 16px !important;
-	}
-
-	.accordion-label {
-		padding: 16px 16px;
-		margin-bottom: 0px !important;
-		cursor: pointer;
-		color: var(--body);
-
-		.__arrow {
-			transition: transform 0.3s ease-in-out;
-		}
-	}
-
-	.accordion-label:hover {}
-
+	/* Stan rozwinięcia zależny od :checked rodzeństwa */
 	.accordion-content {
 		max-height: 0;
-		-webkit-transition: all 0.3s;
 		transition: all 0.3s;
 		padding: 0;
 		overflow: hidden;
 	}
 
+	/* Treść z WYSIWYG */
 	.accordion-content p {
 		margin: 0;
 		margin-bottom: 16px;
@@ -59,16 +36,24 @@
 		border: 1px solid var(--primary);
 	}
 
-	input:checked+.accordion-label .__arrow {
+	input:checked + .accordion-label .__arrow {
 		transform: rotate(180deg);
 	}
 
-	.accordion:has(input:checked) {
-		padding-bottom: 0px;
-	}
-
-	input:checked~.accordion-content {
+	input:checked ~ .accordion-content {
 		max-height: 1200px;
 		padding: 0 16px 24px 16px;
+	}
+}
+
+/*--- Wariant „Zdjęcie jako tło sekcji” (makieta „O nas”) ---*/
+
+.b-accordion.accordion-cover {
+	.accordion-content p {
+		color: var(--color-white);
+	}
+
+	input:checked ~ .accordion-content {
+		padding: 0 8px 16px;
 	}
 }

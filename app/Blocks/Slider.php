@@ -16,6 +16,7 @@ class Slider extends Block
     public $icon = 'image-flip-horizontal';
     public $keywords = ['slider', 'oferta'];
     public $mode = 'edit';
+    public $blockVersion = 3;
     public $supports = [
         'align' => false,
         'mode' => true,

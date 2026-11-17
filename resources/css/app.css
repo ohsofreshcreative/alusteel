@@ -8,46 +8,46 @@
 /* Twoje “źródłowe” zmienne RGB */
 :root {
   /* base */
-  --body: 42 63 80; /* #2A3F50 */
+  --body:  17 17 17;        /* #111111 */
 
-/* PRIMARY (granat) */
-.primary-check { color:#1A3955;}
---primary: 26 57 85;      /* #1A3955 */
---p-hover: 5 11 17;       /* #050B11 */
+/* PRIMARY (czerwony) */
+.primary-check { color:#FB1800;}
+--primary: 251 24 0;      /* #FB1800 */
+--p-hover: 167 16 0;        /* #A71000 */
 
---p-50: 207 230 254;      /* #CFE6FE */
---p-100: 187 214 244;     /* #BBD6F4 */
---p-200: 143 183 226;     /* #8FB7E2 */
---p-300: 106 157 212;     /* #6A9DD4 */
---p-400: 58 108 161;      /* #3A6CA1 */
---p-500: 26 57 85;        /* #1A3955 */
---p-600: 22 48 71;        /* #163047 */
---p-700: 17 38 57;        /* #112639 */
---p-800: 13 29 43;        /* #0D1D2B */
---p-900: 9 19 28;         /* #09131C */
---p-dark: 5 11 17;        /* #050B11 */
+--p-50: 254 209 204;      /* #FED1CC */
+--p-100: 254 178 170;     /* #FEB2AA */
+--p-200: 253 140 128;     /* #FD8C80 */
+--p-300: 252 101 85;      /* #FC6555 */
+--p-400: 252 62 42;       /* #FC3E2A */
+--p-500: 251 24 0;        /* #FB1800 */
+--p-600: 209 20 0;        /* #D11400 */
+--p-700: 167 16 0;        /* #A71000 */
+--p-800: 126 12 0;        /* #7E0C00 */
+--p-900: 84 8 0;          /* #540800 */
+--p-dark: 50 5 0;         /* #320500 */
 --p-bg: 0 21 60; /* #00153C */
 
---action: rgb(26, 57, 85);
+--action: rgb(251, 24, 0);
 
 
-/* SECONDARY (brąz) */
-.secondary-check { color:#492D28;}
---secondary: 73 45 40;    /* #492D28 */
---s-hover: 61 38 33;        /* #0F0908 */
+/* SECONDARY (grafit) */
+.secondary-check { color:#222222;}
+--secondary: 34 34 34;    /* #222222 */
+--s-hover: 28 28 28;      /* #1C1C1C */
 
---s-50: 227 207 203;      /* #E3CFCB */
---s-100: 217 176 168;     /* #D9B0A8 */
---s-200: 184 141 134;     /* #B88D86 */
---s-300: 148 105 97;      /* #946961 */
---s-400: 118 73 65;       /* #764941 */
---s-500: 73 45 40;        /* #492D28 */
---s-600: 61 38 33;        /* #3D2621 */
---s-700: 49 30 27;        /* #311E1B */
---s-800: 37 23 20;        /* #251714 */
---s-900: 24 15 13;        /* #180F0D */
---s-dark: 15 9 8;         /* #0F0908 */
---s-accent: 148 105 97;         /* #946961 */
+--s-50: 211 211 211;      /* #D3D3D3 */
+--s-100: 181 181 181;     /* #B5B5B5 */
+--s-200: 145 145 145;     /* #919191 */
+--s-300: 108 108 108;     /* #6C6C6C */
+--s-400: 71 71 71;        /* #474747 */
+--s-500: 34 34 34;        /* #222222 */
+--s-600: 28 28 28;        /* #1C1C1C */
+--s-700: 23 23 23;        /* #171717 */
+--s-800: 17 17 17;        /* #111111 */
+--s-900: 11 11 11;        /* #0B0B0B */
+--s-dark: 7 7 7;          /* #070707 */
+--s-accent: 108 108 108;  /* #6C6C6C */
 
 
 /* THIRD (jasny niebieski) */
@@ -68,7 +68,7 @@
 --t-dark: 37 43 49;       /* #252B31 */
 
   /* neutrals / fixed backgrounds */
-  --text-body: rgb(var(--p-800));
+  --text-body: rgb(var(--s-800));
   --gray: #2a3f50;
   --bg: #F4F9FF;
   --bg-light: rgb(var(--p-50));
@@ -81,8 +81,8 @@
 @theme {
   /* base */
   --color-body: rgb(var(--body));
-  --color-main: var(--bg-navy);
-  --color-main-light: #10377B;
+  --color-main: rgb(var(--s-900));
+  --color-main-light: rgb(var(--s-700));
 
   /* primary */
   --color-primary: rgb(var(--primary));
@@ -103,6 +103,7 @@
   /* secondary */
   --color-secondary: rgb(var(--secondary));
   --color-secondary-hover: rgb(var(--s-hover));
+  --color-secondary-50: rgb(var(--s-50));
   --color-secondary-100: rgb(var(--s-100));
   --color-secondary-200: rgb(var(--s-200));
   --color-secondary-300: rgb(var(--s-300));
@@ -185,6 +186,29 @@
 @import '../css/blocks/overlap.scss';
 @import '../css/blocks/proces.scss';
 @import '../css/blocks/contact.scss';
+@import '../css/blocks/offer.scss';
+@import '../css/blocks/utv.scss';
+@import '../css/blocks/whyus.scss';
+@import '../css/blocks/works.scss';
+@import '../css/blocks/history.scss';
+@import '../css/blocks/certs.scss';
+@import '../css/blocks/bar.scss';
+@import '../css/blocks/params.scss';
+@import '../css/blocks/application.scss';
+@import '../css/blocks/specification.scss';
+@import '../css/blocks/docs.scss';
+@import '../css/blocks/others.scss';
+@import '../css/blocks/reach.scss';
+@import '../css/blocks/duo.scss';
+@import '../css/blocks/highlight.scss';
+@import '../css/blocks/example.scss';
+@import '../css/blocks/models.scss';
+@import '../css/blocks/presentation.scss';
+@import '../css/blocks/details.scss';
+@import '../css/blocks/references.scss';
+@import '../css/blocks/gallery.scss';
+@import '../css/sections/footer.scss';
+@import '../css/sections/header.scss';
 /*-- NOT USED ---*/
 @import '../css/blocks/accordion.scss';
 @import '../css/blocks/cards.scss';

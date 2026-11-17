@@ -17,6 +17,17 @@ class PageFooter extends Field
 
 		$pageFooter
 			->setLocation('post_type', '==', 'page')
+				->or('post_type', '==', 'offer');
+
+		$pageFooter
+			->addTrueFalse('footer_cta', [
+				'label' => 'Pokaż CTA w stopce',
+				'instructions' => 'Treść edytujemy w menu „Wezwanie do działania”.',
+				'default_value' => 1,
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
 			->addTrueFalse('no_footer_margin', [
 				'label' => 'Brak marginesu footera',
 				'ui' => 1,

@@ -16,6 +16,7 @@ class Hero extends Block
 	public $icon = 'align-full-width';
 	public $keywords = ['tresc', 'zdjecie'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,

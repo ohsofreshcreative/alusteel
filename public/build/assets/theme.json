@@ -1466,12 +1466,12 @@
         {
           "name": "Main",
           "slug": "main",
-          "color": "var(--bg-navy)"
+          "color": "rgb(var(--s-900))"
         },
         {
           "name": "Main (Light)",
           "slug": "main-light",
-          "color": "#10377b"
+          "color": "rgb(var(--s-700))"
         },
         {
           "name": "Primary",
@@ -1514,6 +1514,16 @@
           "color": "rgb(var(--p-500))"
         },
         {
+          "name": "Primary (600)",
+          "slug": "primary-600",
+          "color": "rgb(var(--p-600))"
+        },
+        {
+          "name": "Primary (700)",
+          "slug": "primary-700",
+          "color": "rgb(var(--p-700))"
+        },
+        {
           "name": "Primary (900)",
           "slug": "primary-900",
           "color": "rgb(var(--p-900))"
@@ -1524,11 +1534,6 @@
           "color": "rgb(var(--p-dark))"
         },
         {
-          "name": "Primary (Bg)",
-          "slug": "primary-bg",
-          "color": "rgb(var(--p-bg))"
-        },
-        {
           "name": "Secondary",
           "slug": "secondary",
           "color": "rgb(var(--secondary))"
@@ -1537,6 +1542,11 @@
           "name": "Secondary (Hover)",
           "slug": "secondary-hover",
           "color": "rgb(var(--s-hover))"
+        },
+        {
+          "name": "Secondary (50)",
+          "slug": "secondary-50",
+          "color": "rgb(var(--s-50))"
         },
         {
           "name": "Secondary (100)",
@@ -1554,11 +1564,6 @@
           "color": "rgb(var(--s-300))"
         },
         {
-          "name": "Secondary (400)",
-          "slug": "secondary-400",
-          "color": "rgb(var(--s-400))"
-        },
-        {
           "name": "Secondary (500)",
           "slug": "secondary-500",
           "color": "rgb(var(--s-500))"
@@ -1567,6 +1572,16 @@
           "name": "Secondary (600)",
           "slug": "secondary-600",
           "color": "rgb(var(--s-600))"
+        },
+        {
+          "name": "Secondary (700)",
+          "slug": "secondary-700",
+          "color": "rgb(var(--s-700))"
+        },
+        {
+          "name": "Secondary (900)",
+          "slug": "secondary-900",
+          "color": "rgb(var(--s-900))"
         },
         {
           "name": "Secondary (Accent)",
@@ -1582,11 +1597,6 @@
           "name": "Third (Hover)",
           "slug": "third-hover",
           "color": "rgb(var(--t-hover))"
-        },
-        {
-          "name": "Third (100)",
-          "slug": "third-100",
-          "color": "rgb(var(--t-100))"
         },
         {
           "name": "Third (600)",

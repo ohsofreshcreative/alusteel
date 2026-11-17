@@ -17,6 +17,7 @@ class Contact extends Block
 	public $icon = 'email';
 	public $keywords = ['formularz', 'kontakt'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,
@@ -62,6 +63,16 @@ class Contact extends Block
 				'label' => 'Przycisk',
 				'return_format' => 'array',
 			])
+			->addImage('bg', [
+				'label' => 'Tekstura tła (wariant ciemny)',
+				'return_format' => 'array',
+				'preview_size' => 'thumbnail',
+			])
+			->addText('form_header', ['label' => 'Nagłówek formularza'])
+			->addText('shortcode', [
+				'label' => 'Shortcode formularza',
+				'instructions' => 'Np. [contact-form-7 id="..."]',
+			])
 
 			->addRepeater('r_contact', [
 				'label' => 'Działy',
@@ -93,6 +104,12 @@ class Contact extends Block
 			])
 			->addTrueFalse('wide', [
 				'label' => 'Szeroka kolumna',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
+			->addTrueFalse('dark', [
+				'label' => 'Wariant ciemny z formularzem (makieta Kontakt)',
 				'ui' => 1,
 				'ui_on_text' => 'Tak',
 				'ui_off_text' => 'Nie',
@@ -134,6 +151,7 @@ class Contact extends Block
 			'wide' => (bool) get_field('wide'),
 			'nomt' => (bool) get_field('nomt'),
 			'gap' => (bool) get_field('gap'),
+			'dark' => (bool) get_field('dark'),
 
 			'background' => get_field('background') ?: 'none',
 		];
@@ -143,6 +161,7 @@ class Contact extends Block
 			'wide' => 'wide',
 			'nomt' => '!mt-0',
 			'gap' => 'wider-gap',
+			'dark' => 'contact-dark',
 		]);
 
 		return $fields;

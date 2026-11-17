@@ -1,0 +1,10 @@
+.b-gallery {
+}
+
+/* Stan aktywny przełączany przez Alpine (klasa .is-active) */
+.b-gallery .__chip.is-active,
+.b-gallery .__chip:not(:disabled):hover {
+  border-color: var(--color-primary-700);
+  background: var(--color-primary-700);
+  color: var(--color-white);
+}

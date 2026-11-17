@@ -15,6 +15,7 @@ class Tabs extends Block
 	public $icon = 'table-row-after';
 	public $keywords = ['tabs', 'kafelki'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,

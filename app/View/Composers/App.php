@@ -25,7 +25,23 @@ class App extends Composer
 			'logo' => get_field('logo', 'option'),
 			'logo_footer' => get_field('logo_footer', 'option'),
 			'footer_contact' => get_field('footer_contact', 'option'),
+			'socials' => get_field('socials', 'option'),
+			'footer_cta' => $this->footerCta(),
 		];
+	}
+
+	/**
+	 * CTA w stopce z opcji „Wezwanie do działania”.
+	 * Pokazywane domyślnie — strona może je wyłączyć polem `footer_cta`
+	 * (null = pole niezapisane, np. starsze strony lub inne typy treści).
+	 */
+	public function footerCta(): ?array
+	{
+		if (is_singular() && get_field('footer_cta', get_queried_object_id()) === false) {
+			return null;
+		}
+
+		return get_field('g_octa', 'option') ?: null;
 	}
 
 	/**

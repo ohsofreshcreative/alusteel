@@ -6,28 +6,7 @@
 		.swiper-slide {
 			height: auto;
 		}
-		.__img img {
-			width: 56px;
-			height: 56px;
-			max-width: 56px;
-			max-height: 56px;
-			border-radius: 100%;
-			object-fit: cover;
-		}
 	}
-
-	.__arrows {
-		width: max-content;
-		right: 0;
-		top: -80px;
-	}
-}
-
-.line-clamp-6 {
-	display: -webkit-box;
-	-webkit-line-clamp: 6;
-	-webkit-box-orient: vertical;
-	overflow: hidden;
 }
 
 .review-popup {

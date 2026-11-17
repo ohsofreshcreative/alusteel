@@ -2,10 +2,39 @@
 
 namespace App\Walkers;
 
+use App\Support\MegaMenu;
 use Walker_Nav_Menu;
 
 class DropdownWalker extends Walker_Nav_Menu
 {
+    /**
+     * Element główny z włączonym polem ACF „megamenu” renderujemy partialem zamiast zwykłego dropdownu.
+     */
+    public function display_element($element, &$children_elements, $max_depth, $depth, $args, &$output)
+    {
+        if ($depth === 0 && $element && get_field('megamenu', $element->ID)) {
+            $children = $children_elements[$element->ID] ?? [];
+            $output .= view('partials.megamenu', MegaMenu::data($element, $children))->render();
+            $this->unsetDescendants($element->ID, $children_elements);
+
+            return;
+        }
+
+        parent::display_element($element, $children_elements, $max_depth, $depth, $args, $output);
+    }
+
+    /**
+     * Usuwa potomków z kolejki walkera — inaczej Walker::walk() wypisałby je na końcu jako „sieroty”.
+     */
+    private function unsetDescendants($id, &$children_elements)
+    {
+        foreach ($children_elements[$id] ?? [] as $child) {
+            $this->unsetDescendants($child->ID, $children_elements);
+        }
+
+        unset($children_elements[$id]);
+    }
+
     /**
      * Starts the list before the elements are added.
      */

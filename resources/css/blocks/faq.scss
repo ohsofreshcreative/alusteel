@@ -1,38 +1,14 @@
 .b-faq {
+	/* Ukryty checkbox sterujący panelem */
 	input.tab-check {
 		position: absolute !important;
 		opacity: 0 !important;
 		z-index: -1 !important;
 	}
 
-	.tabs-wrapper {}
-
-	.tabs-wrapper:last-child {
-		border-bottom: none;
-	}
-
-	.tabs {
-		width: 100%;
-		overflow: hidden;
-		margin-bottom: 16px !important;
-	}
-
-	.tabs-label {
-		padding: 16px 16px;
-		margin-bottom: 0px !important;
-		cursor: pointer;
-		color: var(--body);
-
-		.__arrow {
-			transition: transform 0.3s ease-in-out;
-		}
-	}
-
-	.tabs-label:hover {}
-
+	/* Stan rozwinięcia zależny od :checked rodzeństwa + treść z WYSIWYG */
 	.tabs-content {
 		max-height: 0;
-		-webkit-transition: all 0.3s;
 		transition: all 0.3s;
 		padding: 0 24px;
 		overflow: hidden;
@@ -65,15 +41,11 @@
 		border: 1px solid var(--primary);
 	}
 
-	input:checked+.tabs-label .__arrow {
+	input:checked + .tabs-label .__arrow {
 		transform: rotate(45deg);
 	}
 
-	.tabs:has(input:checked) {
-		padding-bottom: 0px;
-	}
-
-	input:checked~.tabs-content {
+	input:checked ~ .tabs-content {
 		max-height: 1200px;
 		padding: 0 24px 24px 24px;
 	}

@@ -17,6 +17,7 @@ class Accordion extends Block
 	public $icon = 'feedback';
 	public $keywords = ['accordion'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,
@@ -35,6 +36,7 @@ class Accordion extends Block
 			/*--- TAB #1 ---*/
 			->addTab('Treść', ['placement' => 'top'])
 			->addGroup('g_accordion', ['label' => ''])
+			->addText('subtitle', ['label' => 'Nadtytuł'])
 			->addText('title', ['label' => 'Tytuł'])
 
 			->addImage('image', [
@@ -78,6 +80,13 @@ class Accordion extends Block
 			])
 			->addText('section_class', [
 				'label' => 'Dodatkowe klasy CSS',
+			])
+			->addTrueFalse('cover', [
+				'label' => 'Zdjęcie jako tło sekcji',
+				'instructions' => 'Zdjęcie z zakładki Treść wypełnia tło, tekst i panele są białe.',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
 			])
 			->addTrueFalse('nolist', [
 				'label' => 'Brak punktatorów',
@@ -133,6 +142,7 @@ class Accordion extends Block
 			'wide' => (bool) get_field('wide'),
 			'nomt' => (bool) get_field('nomt'),
 			'gap' => (bool) get_field('gap'),
+			'cover' => (bool) get_field('cover'),
 
 			'background' => get_field('background') ?: 'none',
 		];

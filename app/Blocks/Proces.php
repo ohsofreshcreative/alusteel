@@ -16,6 +16,7 @@ class Proces extends Block
 	public $icon = 'randomize';
 	public $keywords = ['proces'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,

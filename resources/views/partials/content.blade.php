@@ -13,8 +13,8 @@ $category = !empty($categories) ? $categories[0] : null;
 		<div class="absolute inset-0 bg-linear-to-t from-main to-transparent"></div>
 		@endif
 
-		<div class="__txt relative flex flex-col gap-2 text-white">
-			<div class="__info flex items-center gap-2">
+		<div class="__txt relative text-white">
+			<div class="__info flex items-center gap-2 m-title">
 				@if ($category)
 				<span>{{ $category->name }}</span>
 				@endif

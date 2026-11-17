@@ -1,0 +1,49 @@
+.b-offer {
+}
+
+/* Zdjęcie tła pod produktem, wygaszane gradientem do koloru karty */
+.b-offer:not(.offer-tiles) .__card .__img {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-secondary-700) 72%, transparent) 0%, var(--color-secondary-700) 100%),
+    url('/wp-content/uploads/2026/11/tail-bg-scaled.jpg') center top / cover no-repeat;
+}
+
+/* Offer poza pozycją pod hero ma na makiecie („O nas”) 120px paddingu górnego (domyślnie pt-8 pod nakładkę hero) */
+.b-offer:not(.offer-tiles):not(.b-hero + .b-offer) {
+  padding-top: calc(var(--spacing) * 30);
+}
+
+/* Na makiecie offer przylega bezpośrednio do hero (bez odstępu -smt) */
+.b-hero + .b-offer {
+  margin-top: 0 !important;
+}
+
+/*--- Wariant kafli kategorii (archiwum oferty) ---*/
+
+/* Kafle nachodzą na hero o 84px (reguła wyżej zeruje margines po hero) */
+.b-hero + .b-offer.offer-tiles {
+  margin-top: calc(var(--spacing) * -21) !important;
+}
+
+/*--- Archiwum oferty: sekcja produktów ---*/
+
+.b-products .__chip {
+  border: 1px solid var(--color-secondary-50);
+  background: var(--color-white);
+  color: var(--color-secondary-900);
+}
+
+.b-products .__chip.is-active,
+.b-products .__chip:hover {
+  border-color: var(--color-primary-600);
+  background: var(--color-primary-600);
+  color: var(--color-white);
+}
+
+.b-products .__card {
+  border: 1px solid var(--color-secondary-50);
+}
+
+.b-products .__card svg {
+  color: var(--color-primary-600);
+}

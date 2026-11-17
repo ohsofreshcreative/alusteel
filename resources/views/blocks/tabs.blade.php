@@ -46,7 +46,7 @@ $grouped_tabs[$tabName][] = $item;
 				@foreach ($grouped_tabs as $name => $items)
 				<button
 					@click="activeTab = {{ $loop->index }}"
-					:class="{ 'bg-primary text-white': activeTab === {{ $loop->index }}, 'bg-gray-200 text-gray-700 hover:bg-gray-300': activeTab !== {{ $loop->index }} }"
+					:class="{ 'bg-primary text-white': activeTab === {{ $loop->index }}, 'bg-secondary-50 text-secondary hover:bg-secondary-200': activeTab !== {{ $loop->index }} }"
 					class="text-sm whitespace-nowrap py-3 px-6 rounded-full transition-colors duration-200 focus:outline-none">
 					{{ $name }}
 				</button>

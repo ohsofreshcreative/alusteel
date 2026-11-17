@@ -1,0 +1,7 @@
+.b-utv {
+}
+
+/* Na makiecie utv przylega bezpośrednio do offer (bez odstępu -smt) */
+.b-offer + .b-utv {
+  margin-top: 0 !important;
+}

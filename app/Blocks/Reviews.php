@@ -16,6 +16,7 @@ class Reviews extends Block
 	public $icon = 'format-quote';
 	public $keywords = ['reviews', 'kafelki'];
 	public $mode = 'edit';
+	public $blockVersion = 3;
 	public $supports = [
 		'align' => false,
 		'mode' => true,
@@ -44,6 +45,12 @@ class Reviews extends Block
 			->addText('section_class', [
 				'label' => 'Dodatkowe klasy CSS',
 			])
+			->addTrueFalse('photo', [
+				'label' => 'Układ ze zdjęciem i strzałkami (referencje)',
+				'ui' => 1,
+				'ui_on_text' => 'Tak',
+				'ui_off_text' => 'Nie',
+			])
 			->addTrueFalse('wide', [
 				'label' => 'Szeroka kolumna',
 				'ui' => 1,
@@ -70,6 +77,7 @@ class Reviews extends Block
 	public function with(): array
 	{
 		$fields = [
+			'subtitle'  => get_field('subtitle', 'option'),
 			'header'    => get_field('header', 'option'),
 			'r_reviews' => get_field('r_reviews', 'option') ?: [],
 
@@ -77,6 +85,7 @@ class Reviews extends Block
 			'section_class' => get_field('section_class'),
 
 			'flip' => (bool) get_field('flip'),
+			'photo' => (bool) get_field('photo'),
 			'wide' => (bool) get_field('wide'),
 			'nomt' => (bool) get_field('nomt'),
 
@@ -85,6 +94,7 @@ class Reviews extends Block
 
 		$fields['sectionClass'] = SectionClasses::fromMap($fields, [
 			'flip' => 'order-flip',
+			'photo' => 'reviews-photo',
 			'wide' => 'wide',
 			'nomt' => '!mt-0',
 		]);
